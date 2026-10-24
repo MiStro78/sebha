@@ -1,0 +1,240 @@
+
+/* General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(124, 172, 133);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Parent */
+.parant {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Sebha Card */
+.sebha {
+    width: 350px;
+    max-width: 100%;
+    min-height: 450px;
+    background-color: green;
+    text-align: center;
+    border: 2px solid rgb(0, 80, 0);
+    border-radius: 30px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    animation: move 1.5s ease;
+}
+
+/* Animation */
+@keyframes move {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Counter Display */
+.sebha .display {
+    width: 90%;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(40px, 7vw, 70px);
+    margin-top: 20px;
+    background-color: rgb(0, 56, 0);
+    border-radius: 20px;
+    border: 8px solid rgb(114, 230, 114);
+    color: rgb(114, 230, 114);
+    overflow-wrap: anywhere;
+}
+
+/* Buttons Container Layout */
+.sebha button {
+    background-color: rgb(0, 56, 0);
+    color: rgb(114, 230, 114);
+    border: 8px solid rgb(114, 230, 114);
+    font-weight: bolder;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Main Counter Button */
+.sebha button:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    max-width: 45vw;
+    max-height: 45vw;
+    border-radius: 50%;
+    font-size: xx-large;
+}
+
+/* Reset Button */
+.sebha button:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    max-width: 25vw;
+    max-height: 25vw;
+    border-radius: 50%;
+    font-size: larger;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+/* Hover */
+.sebha button:hover {
+    transform: scale(1.08);
+    background-color: rgb(0, 90, 0);
+}
+
+.sebha button:active {
+    transform: scale(0.95);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .parant {
+        padding: 20px;
+    }
+
+    .sebha {
+        width: 320px;
+        min-height: 420px;
+        border-radius: 25px;
+        padding: 20px 12px;
+        gap: 20px;
+    }
+
+    .sebha .display {
+        width: 90%;
+        min-height: 90px;
+        font-size: 55px;
+        border-width: 7px;
+    }
+
+    .sebha button:nth-child(2) {
+        width: 135px;
+        height: 135px;
+        font-size: 30px;
+    }
+
+    .sebha button:nth-child(3) {
+        width: 70px;
+        height: 70px;
+        font-size: 18px;
+        margin-left: 20px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .parant {
+        padding: 15px;
+        min-height: 100svh;
+    }
+
+    .sebha {
+        width: 100%;
+        max-width: 330px;
+        min-height: 400px;
+        padding: 20px 12px;
+        border-radius: 22px;
+        gap: 20px;
+    }
+
+    .sebha .display {
+        width: 95%;
+        min-height: 85px;
+        margin-top: 15px;
+        font-size: 48px;
+        border-width: 6px;
+        border-radius: 16px;
+    }
+
+    .sebha button:nth-child(2) {
+        width: 125px;
+        height: 125px;
+        max-width: 40vw;
+        max-height: 40vw;
+        font-size: 28px;
+        border-width: 7px;
+    }
+
+    .sebha button:nth-child(3) {
+        width: 65px;
+        height: 65px;
+        max-width: 22vw;
+        max-height: 22vw;
+        font-size: 16px;
+        border-width: 6px;
+        margin-left: 15px;
+        margin-bottom: 5px;
+    }
+}
+
+/* Very Small Phones */
+@media (max-width: 320px) {
+    .parant {
+        padding: 10px;
+    }
+
+    .sebha {
+        min-height: 360px;
+        padding: 15px 8px;
+        gap: 15px;
+    }
+
+    .sebha .display {
+        min-height: 70px;
+        font-size: 38px;
+        border-width: 5px;
+    }
+
+    .sebha button:nth-child(2) {
+        width: 105px;
+        height: 105px;
+        font-size: 24px;
+    }
+
+    .sebha button:nth-child(3) {
+        width: 55px;
+        height: 55px;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .sebha {
+        animation: none;
+    }
+
+    .sebha button {
+        transition: none;
+    }
+}
